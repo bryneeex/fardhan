@@ -164,6 +164,16 @@
     -webkit-backdrop-filter: none !important;
     border-left: 4px solid var(--primary) !important; /* Cool accent border */
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8) !important;
+    color: #ffffff !important;
+  }
+  .chatbot-window * {
+    color: #ffffff !important;
+  }
+  .chatbot-subtitle, .chatbot-input::placeholder {
+    color: rgba(255,255,255,0.6) !important;
+  }
+  .chatbot-title, .chatbot-prompt, .chatbot-msg.assistant pre {
+    color: var(--primary) !important;
   }
   .chatbot-toggle { bottom: 1.2rem; left: 1.2rem; }
 }

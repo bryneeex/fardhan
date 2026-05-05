@@ -130,4 +130,10 @@
     border-left: 4px solid var(--primary); /* Cool accent border */
     box-shadow: 0 10px 40px rgba(0, 0, 0, 0.8);
   }
+  .nav-link-mobile {
+    color: #ffffff !important; /* Force white text in mobile menu */
+  }
+  .nav-link-mobile.active {
+    color: var(--primary) !important;
+  }
 }
