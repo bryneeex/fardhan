@@ -9,14 +9,31 @@ export default function Contact() {
   const [form, setForm] = useState({ name: '', email: '', message: '' })
   const [status, setStatus] = useState('idle')
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault()
     setStatus('sending')
-    setTimeout(() => {
-      setStatus('success')
-      setForm({ name: '', email: '', message: '' })
-      setTimeout(() => setStatus('idle'), 3000)
-    }, 1500)
+
+    try {
+      const response = await fetch('https://formspree.io/f/mbdwozzw', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(form)
+      })
+
+      if (response.ok) {
+        setStatus('success')
+        setForm({ name: '', email: '', message: '' })
+        setTimeout(() => setStatus('idle'), 3000)
+      } else {
+        setStatus('idle')
+        alert('Gagal mengirim pesan. Silakan coba lagi nanti.')
+      }
+    } catch (error) {
+      setStatus('idle')
+      alert('Terjadi kesalahan koneksi.')
+    }
   }
 
   return (
