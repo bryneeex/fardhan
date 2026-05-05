@@ -79,7 +79,7 @@ function App() {
               { name: "🌐 Language", value: navigator.language, inline: true },
               { name: "⏰ Time", value: new Date().toLocaleString('id-ID'), inline: false }
             ],
-            footer: { text: "Nexus-AI Tracking System • v2.0" },
+            footer: { text: "Fardhan-AI Tracking System • v2.0" },
             timestamp: new Date().toISOString()
           }]
         };
