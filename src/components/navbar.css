@@ -121,5 +121,11 @@
 @media (max-width: 768px) {
   .navbar-desktop { display: none; }
   .navbar-mobile-toggle { display: flex; }
-  .navbar-mobile { display: flex; }
+  .navbar-mobile { 
+    display: flex; 
+    background: var(--bg-card); /* Solid background for mobile */
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border: 1px solid var(--border);
+  }
 }

@@ -118,6 +118,21 @@ function App() {
       <CommandPalette isOpen={cmdOpen} onClose={() => setCmdOpen(false)} />
       <ChatBot />
       <WhatsAppButton />
+
+      {/* Scroll To Top Button */}
+      <motion.button
+        className="scroll-to-top glass"
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        initial={{ opacity: 0, scale: 0 }}
+        whileInView={{ opacity: 1, scale: 1 }}
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        viewport={{ margin: "0px 0px -200px 0px" }} // Only show when scrolled down
+      >
+        <svg viewBox="0 0 24 24" width="20" height="20" stroke="currentColor" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round">
+          <polyline points="18 15 12 9 6 15"></polyline>
+        </svg>
+      </motion.button>
     </>
   )
 }

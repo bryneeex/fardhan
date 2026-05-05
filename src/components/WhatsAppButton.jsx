@@ -3,7 +3,7 @@ import { MessageCircle } from 'lucide-react'
 import './whatsapp.css'
 
 export default function WhatsAppButton() {
-  const phone = '6285716086254' // Ganti dengan nomor WhatsApp Anda
+  const phone = '6285716076254' // Ganti dengan nomor WhatsApp Anda
   const message = encodeURIComponent('Hi! I found your portfolio and would like to discuss a project.')
 
   return (
