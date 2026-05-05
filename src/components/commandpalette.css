@@ -1,0 +1,117 @@
+.cp-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(8px);
+  z-index: 99999;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15vh;
+}
+
+.cp-modal {
+  width: 90%;
+  max-width: 580px;
+  max-height: 60vh;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  border: 1px solid var(--border-glow) !important;
+  box-shadow: 0 0 60px rgba(0, 245, 255, 0.1);
+}
+
+.cp-input-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.cp-search-icon { color: var(--primary); flex-shrink: 0; }
+
+.cp-input {
+  flex: 1;
+  background: none;
+  border: none;
+  outline: none;
+  color: var(--text);
+  font-family: var(--font-main);
+  font-size: 1rem;
+}
+.cp-input::placeholder { color: var(--text-dim); }
+
+.cp-close {
+  background: rgba(255,255,255,0.05);
+  border: 1px solid var(--border);
+  color: var(--text-muted);
+  padding: 4px;
+  border-radius: 6px;
+  display: flex;
+  cursor: none;
+  transition: var(--transition);
+}
+.cp-close:hover { color: var(--text); border-color: var(--primary); }
+
+.cp-results {
+  flex: 1;
+  overflow-y: auto;
+  padding: 0.5rem;
+}
+
+.cp-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  width: 100%;
+  padding: 0.65rem 0.75rem;
+  background: transparent;
+  border: none;
+  border-radius: var(--radius-sm);
+  color: var(--text);
+  font-family: var(--font-main);
+  font-size: 0.9rem;
+  text-align: left;
+  transition: background 0.15s;
+  cursor: none;
+}
+.cp-item.active, .cp-item:hover { background: var(--primary-dim); }
+
+.cp-item-content { flex: 1; display: flex; flex-direction: column; gap: 0.1rem; }
+.cp-item-label { font-weight: 600; font-size: 0.9rem; }
+.cp-item-desc { font-size: 0.75rem; color: var(--text-muted); }
+.cp-item-type {
+  font-family: var(--font-mono);
+  font-size: 0.65rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+}
+
+.cp-empty {
+  padding: 2rem;
+  text-align: center;
+  color: var(--text-muted);
+  font-size: 0.9rem;
+}
+
+.cp-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  padding: 0.6rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.7rem;
+  color: var(--text-dim);
+  font-family: var(--font-mono);
+}
+.cp-footer kbd {
+  background: rgba(255,255,255,0.08);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.65rem;
+  border: 1px solid var(--border);
+  margin-right: 4px;
+}

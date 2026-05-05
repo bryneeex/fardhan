@@ -1,0 +1,42 @@
+.cursor-dot {
+  position: fixed;
+  top: 0; left: 0;
+  width: 12px; height: 12px;
+  background: var(--primary);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99999;
+  will-change: transform;
+  box-shadow: 0 0 10px var(--primary-glow), 0 0 20px rgba(0,245,255,0.3);
+  transition: transform 0.05s ease, width 0.2s, height 0.2s, background 0.2s;
+}
+
+.cursor-dot.clicking {
+  width: 8px; height: 8px;
+  background: var(--secondary);
+}
+
+.cursor-ring {
+  position: fixed;
+  top: 0; left: 0;
+  width: 40px; height: 40px;
+  border: 1px solid rgba(0, 245, 255, 0.5);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 99998;
+  will-change: transform;
+  transition: width 0.3s ease, height 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+}
+
+.cursor-ring.hovering {
+  width: 56px; height: 56px;
+  border-color: var(--primary);
+  background: rgba(0, 245, 255, 0.05);
+  box-shadow: 0 0 20px var(--primary-glow);
+}
+
+.cursor-ring.clicking {
+  width: 32px; height: 32px;
+  background: rgba(176, 38, 255, 0.15);
+  border-color: var(--secondary);
+}

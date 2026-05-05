@@ -1,0 +1,136 @@
+.hero-section {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+  padding-top: 4rem;
+}
+
+.hero-particles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.particle {
+  position: absolute;
+  background: var(--primary);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: float linear infinite;
+  box-shadow: 0 0 6px var(--primary-glow);
+}
+
+.hero-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(100px);
+  pointer-events: none;
+}
+
+.hero-orb-1 {
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(0,245,255,0.12) 0%, transparent 70%);
+  top: -100px; right: -100px;
+}
+
+.hero-orb-2 {
+  width: 400px; height: 400px;
+  background: radial-gradient(circle, rgba(176,38,255,0.1) 0%, transparent 70%);
+  bottom: -50px; left: -100px;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.hero-title { line-height: 1.1; margin-bottom: 0.25rem; }
+
+.hero-scramble {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-mono);
+  font-size: clamp(1rem, 2.5vw, 1.5rem);
+  font-weight: 500;
+}
+
+.hero-scramble-prefix {
+  color: var(--text-muted);
+  font-weight: 700;
+}
+
+.hero-scramble-text {
+  min-width: 250px;
+}
+
+.hero-cursor {
+  color: var(--primary);
+  animation: blink 1s step-end infinite;
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.hero-desc {
+  max-width: 600px;
+  text-align: center;
+  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+}
+
+.hero-cta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.hero-scroll-indicator {
+  position: absolute;
+  bottom: 2rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  opacity: 0.5;
+  cursor: none;
+  transition: var(--transition);
+}
+.hero-scroll-indicator:hover { color: var(--primary); opacity: 1; }
+
+/* Magnetic button effect */
+.magnetic-btn {
+  position: relative;
+  z-index: 1;
+}
+
+.magnetic-btn::after {
+  content: '';
+  position: absolute;
+  inset: -8px;
+  border-radius: inherit;
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  opacity: 0;
+  z-index: -1;
+  filter: blur(20px);
+  transition: opacity 0.3s;
+}
+.magnetic-btn:hover::after { opacity: 0.5; }
+
+@media (max-width: 768px) {
+  .hero-scramble { font-size: 0.9rem; flex-wrap: wrap; justify-content: center; }
+  .hero-scramble-text { min-width: auto; }
+}
